@@ -58,8 +58,40 @@ def main():
     card_tuple = (3, 'hearts')
     print(Card._make(card_tuple))
     print(card._asdict())  # 通过 OrderedDict的形式返回元组, OrderedDict: 有顺序的dict
-    # TODO 2.3.5 作为不可变列表的元组
 
+    # 切片
+    l = [10, 20, 30, 40, 50, 60]
+    print(l[:2])
+    print(l[2:])
+
+    s = 'bicycle'
+    print(s[::3])
+    print(s[::-1])
+    print(s[::-2])
+
+    print(l)
+    l[2:5] = [100]
+    print(l)
+
+    a = [1, 2, 3]
+    print(a * 5)
+    print(5 * 'abcd')
+
+    board = [['_'] * 3 for i in range(3)]
+    print(board)
+    board[1][2] = 'x'
+    print(board)
+
+    l = [1, 2, 3]
+    print(l)
+    print(id(l))
+    l *= 2  # 本地乘
+    print(l)
+    print(id(l))
+
+    t = (1, 2, [30, 40])
+    t[2] += [50, 60]
+    print(t)  # TypeError: 'tuple' object does not support item assignment
 
 if __name__ == "__main__":
     main()
